@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <style>
+
+    </style>
+    <title>Free QR Generator</title>
+</head>
+<body>
+  <marquee behavior="" direction="">This Website is Open Source. Give Contribution and Grow</marquee>
+   <div style="height: 80vh;">
+    <%- include("./partials/scripts") %>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <div class="outer-form">
+        <H1>Free QR Generator </H1>
+        <form action="/generate" method="post">
+        <input type="text" class="form-control" name="url" placeholder="https://yolab.in" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="" type="submit" id="">Generate QR</button>
+      </form>
+    </div>
+   </div>
+   <div class="index-lower">
+    <% if (locals.latest) { %>
+      <div class="youtubeBox">
+          <div class="g-ytsubscribe subButton" data-channelid="UCbhNa11r4gFX4PjHmKC3jrw" data-layout="full" data-count="default"></div>
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/<%= locals.latest %>?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media">
+            </iframe>
+          </div>
+        </div>
+    <% } %>
+    <div class="content">
+      <h2>How to Generate ?</h2>
+      <p>
+        Put your link or any plain text data in entry field and then click <span>"Generate Qr"</span>. 
+        Then page will redirect to page showing your Qr and you can download also that Qr code.
+      </p>
+      <h2>Upcoming Features</h2>
+      <ul>
+        <li>Customizable QR</li>
+        <li>Adding Logo to  QR</li>
+      </ul>
+        <h2>Data Privacy</h2>
+        <p>This Website Currently not using any kind of personal user data like Cookkies or something
+          so there is no concern of Privacy.
+        </p>
+        <h2>About</h2>
+        <ul>
+          <li>This is an Open Source Web for Generating simple and Customizable QR. </li>
+          <li>Current Version 1.0 </li>
+          <li>Released Version 1.0 </li>
+          <li>Total Visits <span><%= locals.count.visits %> +</span></li>
+          <li>Total QR Generated <span><%= locals.count.download %> +</span></li>
+        </ul>
+    </div>
+   </div>
+    <%- include("./partials/footer") %>
+</body>
+</html>

@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",serif;
+}
+.footer{
+    background-color: #263238;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+.container{
+    max-width: 1000px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col{
+    padding: 0px 15px;
+    font-weight:300;
+    width: 33%;
+}
+.col h4{
+    color: #fff;
+    position: relative;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+.row p{
+    color: #fff;
+    font-weight: lighter;
+    font-size: 17px;
+}
+ul{
+    list-style: none;
+    margin-bottom: 30px;
+    position: relative;
+}
+.col li{
+    position: relative;
+    word-break: break-all;
+}
+.col h4::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: coral;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+ul li a{
+    color: #9b9999;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding-bottom: 20px;
+    display:inline-block;
+    }
+ul li a:hover{
+    padding-left: 10px;
+    color: #fff;
+}
+.para{
+    max-width: 300px; 
+    margin: auto;
+}
+/* ---------------- index page css */
+.outer-form{
+    position: relative;
+    width: 900px;
+    margin: auto;
+    top: 50%;
+    transform: translate(0,-50%);
+    padding: 20px;
+    text-align: center;
+}
+.outer-form h1{
+    color: #263238;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 40px;
+}
+.outer-form input{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    font-size: 22px;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid grey;
+}
+.outer-form button{
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 200;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+}
+.outer-form button:hover{
+    background-color:grey;
+    color: #fff;
+}
+.index-lower{
+    position: relative;
+}
+.youtubeBox{
+    position:relative;
+    text-align: center;
+}
+.content{
+    position: relative;
+    width: 70%;
+    /* border: 1px solid red; */
+    margin: 20px auto;
+    padding: 5px;
+    font-size: 17px;
+    font-weight: 300;
+}
+.content h2{
+    margin: 20px 0px;
+    font-size: 30px;
+    color: #263238;
+    font-weight: 400;
+}
+.content p{
+    padding-left: 20px;
+}
+.content li{
+    list-style:inside;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+.content ul li span{
+    color: coral;
+    font-weight: 600;
+}
+iframe{
+    width: 234px;
+    height: 416px;
+}
+.video{
+    position: relative;
+}
+
+/* --------- Media Queries for Responsve ---------- */
+@media (max-width:550px) {
+    .col{
+        width: 50%;
+    }
+}
+@media (max-width:330px) {
+    .para{
+        max-width: 200px; 
+        margin: auto;
+    }
+    .row p{
+        font-size: 12px;
+    }
+    .col{
+        width: 100%;
+    }
+}
+
+/* ----------- index paging */
+@media (max-width:1010px){
+    .outer-form{
+        width: 800px;
+    }
+}
+@media (max-width:820px){
+    .content{
+        font-size: 12px;
+    }
+    .content h2{
+        font-size: 20px;
+    }
+    .outer-form{
+        width: 600px;
+        font-size: 12px;
+    }
+    .outer-form h1{
+        font-size: 30px;
+    }
+    .outer-form button{
+        font-size: 15px;
+        padding: 7px;
+    }
+}
+@media (max-width:600px){
+    .content{
+        width: 90%;
+        margin: auto;
+    }
+    .outer-form{
+        width: 90%;
+        font-size: 8px;
+    }
+    .outer-form h1{
+        font-size: 20px;
+    }
+    .outer-form button{
+        /* width: ; */
+        font-size: 15px;
+    }
+    .col li a{
+        font-size: 18px;
+    }
+}

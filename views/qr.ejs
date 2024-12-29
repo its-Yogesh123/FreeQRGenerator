@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="/css/qr.css">
+</head>
+<body>
+    <marquee behavior="" direction="">This Website is Open Source || Source Code in footer Scroll Down !!!</marquee>
+    
+   <div class="body">
+    <%- include("./partials/scripts") %>
+    
+    <% if (locals.error) { %>
+     <h1>Somthing Went Wrong </h1>
+    <% } else { %>
+   <div class="qrcontainer">
+        <h1>Free Qr Generator</h1>
+        <img src="<%= image %>"  alt="...">
+          <button onclick="download()" class="btn btn-primary">Download QR</button>
+   </div>
+    <script defer>
+        const URL="<%= image %>";
+        function download(){
+            fetch(URL)
+            .then(response=> response.blob())
+            .then(blob =>{
+                const tempURL=window.URL.createObjectURL(blob);
+                const a=document.createElement('a');
+                a.href=tempURL;
+                a.download="download_QR"; // Set the default file name
+                document.body.appendChild(a);
+                a.click();  // Programmatically click the link to trigger download
+                a.remove(); // remove the link from the DOM
+                window.URL.revokeObjectURL(tempURL); // Release the Blob URL
+            })
+            .catch(err=>console.error(err));
+        }
+    </script>
+    <% } %>
+    
+   </div>
+    <%- include("./partials/footer") %>
+    
+</body>
+</html>
